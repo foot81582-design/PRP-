@@ -1,0 +1,5 @@
+{
+  "name": "PRP采集管理系统",
+  "description": "自体血管理系统，支持PRP采集登记、血袋管理及标签打印。",
+  "requestFramePermissions": []
+}

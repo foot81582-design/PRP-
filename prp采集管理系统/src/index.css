@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #1a6b8a;
+  --color-primary-light: #2a8cae;
+  --color-primary-dark: #0d4f68;
+  --color-accent: #27ae7a;
+  --color-accent-light: #e8f7f2;
+  --color-danger: #e74c3c;
+  --color-bg: #f0f4f7;
+  --color-card: #fff;
+  --color-border: #d0dce6;
+  --color-text: #1a2736;
+  --color-text-muted: #6b8094;
+  --color-row-hover: #f5fafd;
+  --color-row-selected: #daeef7;
+  --color-instock-bg: #e8f5ee;
+  --color-instock-fg: #1e7e4a;
+  --color-unstock-bg: #f5e8e8;
+  --color-unstock-fg: #c0392b;
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-bg text-text text-[13px] h-screen overflow-hidden flex flex-col;
+  }
+}
+
+/* Custom styles for tables and scrollbars */
+.table-wrap {
+  @apply overflow-y-auto;
+}
+
+table {
+  @apply w-full border-collapse text-[12.5px];
+}
+
+thead th {
+  @apply bg-[#eaf1f7] px-[10px] py-[6px] text-left font-medium text-text-muted border-b border-border whitespace-nowrap sticky top-0 z-10;
+}
+
+tbody td {
+  @apply px-[10px] py-[5px] border-b border-[#eef2f5] whitespace-nowrap;
+}
+
+tbody tr {
+  @apply hover:bg-row-hover cursor-pointer transition-colors;
+}
+
+tbody tr.selected {
+  @apply bg-row-selected;
+}
+
+/* Print styles */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #printArea, #printArea * {
+    visibility: visible;
+  }
+  #printArea {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 0;
+    padding: 8mm;
+    background: white;
+  }
+}
+
+.print-label-item {
+  width: 90mm;
+  height: 45mm;
+  border: 1px solid #ccc;
+  padding: 3mm 4mm;
+  font-family: Arial, sans-serif;
+  page-break-inside: avoid;
+  display: flex;
+  flex-direction: column;
+  gap: 2mm;
+  font-size: 8pt;
+}
+
