@@ -386,9 +386,6 @@ export default function App() {
 
       {/* Topbar */}
       <header className="bg-primary-dark text-white px-4 h-[38px] flex items-center gap-4 shrink-0">
-        <span className="text-[15px] font-semibold tracking-wider flex items-center gap-2">
-          <Stethoscope size={18} /> 海慧医疗
-        </span>
         <div className="flex h-full">
           <div className="px-3.5 h-full flex items-center cursor-pointer opacity-75 hover:opacity-100 transition-opacity">主页</div>
           <div className="px-3.5 h-full flex items-center cursor-pointer bg-bg text-primary-dark rounded-t-md font-medium">自体血管理</div>
